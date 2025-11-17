@@ -1,3 +1,5 @@
+# Copyright (c) 2025, Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+# See LICENSE.md for license information.
 """Bioethanol multi-stage process simulator using SciPy ODE solver (batched output).
 
 This module provides two ODE-based simulators:

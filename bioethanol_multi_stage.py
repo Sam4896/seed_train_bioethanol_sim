@@ -1,4 +1,5 @@
-# © 2025 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+# Copyright (c) 2025, Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+# See LICENSE.md for license information.
 from typing import Dict, List, Optional
 
 import torch

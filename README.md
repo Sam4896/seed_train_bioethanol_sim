@@ -1,7 +1,5 @@
 # Multi-Stage Bioethanol Seed Train Simulation
 
-© 2025 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
-
 A high-fidelity, 26-dimensional simulator for a 3-stage bioethanol seed train process (Flask → Seed Fermenter → Production), designed as a benchmark for process-aware Bayesian Optimization.
 
 ## Overview
@@ -255,5 +253,5 @@ Users are encouraged to report any issues, bugs, or concerns they encounter when
 
 ## License
 
-© 2025 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+This project is licensed under the BSD 3-Clause License. See [LICENSE.md](LICENSE.md) for the full license text.
 

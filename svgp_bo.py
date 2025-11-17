@@ -1,4 +1,5 @@
-# © 2025 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+# Copyright (c) 2025, Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+# See LICENSE.md for license information.
 """Bayesian optimization example using SVGP and the bioethanol multi-stage simulator."""
 
 import torch

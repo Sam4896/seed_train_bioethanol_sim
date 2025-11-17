@@ -1,4 +1,5 @@
-# © 2025 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+# Copyright (c) 2025, Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+# See LICENSE.md for license information.
 """Feature extraction for the 3-stage bioethanol seed train simulator.
 
 This module computes features for each stage of the seed train process
