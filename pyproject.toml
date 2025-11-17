@@ -1,0 +1,160 @@
+# ============================================================================
+# Environment Setup Instructions
+# ============================================================================
+# 
+# Using Poetry (Recommended):
+# 
+# 1. Install Poetry (if not already installed):
+#    curl -sSL https://install.python-poetry.org | python3 -
+#    OR on Windows (PowerShell):
+#    (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+# 
+# 2. Install dependencies and create virtual environment:
+#    poetry install
+# 
+# 3. Activate the Poetry shell:
+#    poetry shell
+# 
+# 4. Run the simulation:
+#    poetry run python your_script.py
+#    OR (if in poetry shell):
+#    python your_script.py
+# 
+# Alternative: Using pip/venv:
+# 
+# 1. Create a virtual environment:
+#    python -m venv venv
+# 
+# 2. Activate the virtual environment:
+#    - On Windows: venv\Scripts\activate
+#    - On Linux/Mac: source venv/bin/activate
+# 
+# 3. Install dependencies:
+#    pip install torch botorch==0.14.0 "numpy>=1.23.2,<2" scipy matplotlib networkx
+# 
+# 4. Run the simulation:
+#    python your_script.py
+# 
+# ============================================================================
+# Requirements
+# ============================================================================
+
+[tool.poetry]
+name = "bioethanol-simulation"
+version = "0.1.0"
+description = "multi-seed train bioethanol simulation"
+authors = ["Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V."]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+torch = "*"
+botorch = "0.14.0"
+numpy = ">=1.23.2,<2.0.0"
+scipy = "*"
+matplotlib = "*"
+networkx = "*"
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu128"
+priority = "supplemental"
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+show-fixes = true
+# Select rules for various checks
+
+extend-select = [
+    "B",
+    "W",
+    "A",  # Code quality checks
+    "C",  # Cyclomatic complexity (McCabe complexity)
+    "D",  # Pydocstyle (docstring checks)
+    "N",  # Naming conventions (PEP8-naming)
+    "RUF",  # Ruff specific checks for readability and optimizations
+    "TYP",  # Type annotations,
+    "C90",
+    "D100",  # Missing docstring in public module
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+    "D200",  # One-line docstring should fit on one line
+    "D205",  # One blank line required between summary and description
+    "D400",  # First line should end with a period
+    "D403",  # First word of the docstring should be capitalized
+    "D417"   # Missing argument descriptions in docstring
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Maximum allowed complexity for functions (McCabe complexity)
+[lint.mccabe]
+# Flag errors (`C901`) whenever the complexity level exceeds 5.
+max-complexity = 5
+
+[format]
+skip-magic-trailing-comma = false
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = false
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
